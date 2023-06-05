@@ -1,0 +1,25 @@
+*{margin: 0;
+padding: 0;
+}
+.Main{
+    height: 5rem;
+    background-color: rgba(154, 106, 231, 0.788);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   box-shadow: -2px 9px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px 9px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 9px 5px 0px rgba(0,0,0,0.75);
+}
+.Main h1{
+    color: brown;
+font-weight: 900;
+}
+.link{
+  margin-right: 2rem;
+  text-decoration: none;
+  font-size: x-large;
+  color: rgb(226, 219, 209);
+}
