@@ -5,7 +5,7 @@ import style from "./Cart.module.css";
 import { FaHandPointLeft } from "react-icons/fa";
 import Swal from "sweetalert2";
 function Cart() {
-  const { books, cartItems, setCartItems } = useGlobalContext();
+  const {  cartItems, setCartItems } = useGlobalContext();
 
   const addToCart = (book) => {
     setCartItems([...cartItems, book]);
