@@ -7,8 +7,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("the lost world");
   const [books, setBooks] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  // console.log("i am from search ", searchTerm)
-  console.log("i am from search ", books)
+
 
   const fetchBooks = useCallback(async () => {
     try {

@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+.inner{
+    width: 80%;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1rem solid rgb(236, 188, 188);
+    gap: 2rem;
+}
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.detail h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: rgb(65, 59, 59);
+}
+.img{
+    width: 18rem;
+    height: 30rem;
+}

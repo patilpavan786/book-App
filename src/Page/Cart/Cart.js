@@ -1,8 +1,9 @@
-import React from 'react';
-import Navbar from '../../Component/Navbar/Navbar';
+import React from "react";
+import Navbar from "../../Component/Navbar/Navbar";
 import { useGlobalContext } from "../../context";
 import style from "./Cart.module.css";
-
+import { FaHandPointLeft } from "react-icons/fa";
+import Swal from "sweetalert2";
 function Cart() {
   const { books, cartItems, setCartItems } = useGlobalContext();
 
@@ -17,7 +18,7 @@ function Cart() {
 
   const placeOrder = () => {
     console.log("Placing order:", cartItems);
-    alert("Order placed");
+    Swal.fire("Order placed");
     setCartItems([]);
   };
 
@@ -85,18 +86,20 @@ function Cart() {
           })}
         </div>
         <div className={style.cart}>
-          <h2>Shopping Cart</h2>
-          {cartItems.length > 0 ? (
-            <ul>
-              {cartItems.map((item, index) => (
-                <li key={index}>{item.title}</li>
-              ))}
-            </ul>
-          ) : (
-            <p>Your cart is empty.</p>
-          )}
           {cartItems.length > 0 && (
-            <button onClick={placeOrder}>Place Order</button>
+            <>
+              {" "}
+              <button className={style.Orderbtn} onClick={placeOrder}>
+                Place Order{" "}
+              </button>{" "}
+              <FaHandPointLeft
+                style={{
+                  width: "2.5rem",
+                  height: "2.5rem",
+                  color: "rgba(250, 66, 66, 0.795)",
+                }}
+              />
+            </>
           )}
         </div>
       </div>

@@ -43,4 +43,21 @@
     font-weight: 600;
     color: #fff;
   }
-  
+  .Orderbtn{
+    margin-bottom: 0.8rem;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background-color: rgba(250, 66, 66, 0.795);
+    font-weight: 800;
+    color: #fff;
+    font-size: 1rem;
+  }
+  .cart{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  }

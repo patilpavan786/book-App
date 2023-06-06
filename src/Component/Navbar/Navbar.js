@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Navbar.module.css";
 import {FaOpencart} from "react-icons/fa"
+import {GiBurningBook} from "react-icons/gi"
 import { useGlobalContext } from "../../context";
 function Navbar() {
   const {cartItems } = useGlobalContext();
   return (
     <div className={style.Main}>
-      <h1>Book</h1>
+      <h1>Book <GiBurningBook style={{width:"2.5rem", height:"2.5rem"}}/></h1>
       <div className={style.links}>
         <NavLink className={style.link} to={"/"}>Home</NavLink>
         <NavLink className={style.link} to={"/Cart"}>Cart</NavLink>

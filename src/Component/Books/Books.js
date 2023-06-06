@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./Books.module.css";
 import { useGlobalContext } from "../../context";
 
 function Books() {
   const { books, setCartItems, cartItems } = useGlobalContext();
+  const navigate = useNavigate();
 
   const addToCart = (book) => {
     setCartItems([...cartItems, book]);
@@ -14,7 +16,9 @@ function Books() {
     setCartItems(updatedCart);
   };
 
- 
+  const handleClick = (book) => {
+    navigate(`/Card/${book.cover_id}`, { state: { book } }); 
+  };
 
   return (
     <div className={style.main}>
@@ -22,7 +26,11 @@ function Books() {
         {books.slice(0, 30).map((book, index) => {
           const isBookInCart = cartItems.includes(book);
           return (
-            <div className={style.bookitem} key={index}>
+            <div
+              className={style.bookitem}
+              key={index}
+              onClick={() => handleClick(book)} 
+            >
               <div className={style.bookitemimg}>
                 <img
                   src={`https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`}
