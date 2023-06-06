@@ -1,13 +1,11 @@
-/* Books.module.css */
 
-.main {
+  .main {
     width: 100%;
   }
   
   .booklistcontent {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-top: 6.2rem;
   }
   

@@ -1,21 +1,63 @@
-.headercontent{
+.headercontent {
     min-height: 80vh;
-    background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(19, 3, 22, 0.5)), url("https://images.squarespace-cdn.com/content/v1/54d8f3b4e4b04def03ef0878/1556104982134-6LUAOFH4OSYW1XBAAKVA/library%2520books.jpg?format=750w") center/cover no-repeat;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  gap: 2rem;
+    background: linear-gradient(
+        rgba(141, 39, 174, 0.3),
+        rgba(19, 3, 22, 0.5)
+      ),
+      url("https://images.squarespace-cdn.com/content/v1/54d8f3b4e4b04def03ef0878/1556104982134-6LUAOFH4OSYW1XBAAKVA/library%2520books.jpg?format=750w") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     flex-direction: column;
-}
-.headertitle{
+  }
+  
+  .headertitle {
     font-size: 4rem;
     color: #ffff;
-}
-.headertext{
+    background: linear-gradient(
+      45deg,
+      #f3c677,
+      #f694c1,
+      #bc7aff,
+      #6096ff,
+      #00bfff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s linear infinite;
+  }
+  
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes liveRainbow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  .headertitle {
+    animation: rainbow 5s linear infinite, liveRainbow 10s linear infinite;
+  }
+  
+  .headertext {
     font-size: 1.3rem;
-    margin-top: -1.8rem;
-    margin-bottom: 2.8rem;
+    margin-bottom: 1.2rem;
     opacity: 0.8;
     max-width: 770px;
     color: #ffff;
-}
+  }
+  
