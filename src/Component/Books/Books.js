@@ -16,8 +16,11 @@ function Books() {
     setCartItems(updatedCart);
   };
 
-  const handleClick = (book) => {
-    navigate(`/Card/${book.cover_id}`, { state: { book } }); 
+  const handleClick = (book, event) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    navigate(`/Card/${book.cover_id}`, { state: { book } });
   };
 
   return (
@@ -29,12 +32,13 @@ function Books() {
             <div
               className={style.bookitem}
               key={index}
-              onClick={() => handleClick(book)} 
+              
             >
               <div className={style.bookitemimg}>
                 <img
                   src={`https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`}
                   alt="cover"
+                  onClick={() => handleClick(book)} 
                 />
               </div>
               <div className={style.bookiteminfo}>
