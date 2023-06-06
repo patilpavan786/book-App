@@ -1,42 +1,77 @@
 import React from "react";
 import style from "./Books.module.css";
 import { useGlobalContext } from "../../context";
+
 function Books() {
-  const { books } = useGlobalContext();
-  console.log(books);
+  const { books, setCartItems, cartItems } = useGlobalContext();
+
+  const addToCart = (book) => {
+    setCartItems([...cartItems, book]);
+  };
+
+  const removeFromCart = (book) => {
+    const updatedCart = cartItems.filter((item) => item !== book);
+    setCartItems(updatedCart);
+  };
+
+ 
+
   return (
     <div className={style.main}>
-      <div className="booklist-content grid">
+      <div className={style.booklistcontent}>
         {books.slice(0, 30).map((book, index) => {
+          const isBookInCart = cartItems.includes(book);
           return (
-            <div className="book-item flex flex-column flex-sb">
-              <div className="book-item-img">
+            <div className={style.bookitem} key={index}>
+              <div className={style.bookitemimg}>
                 <img
                   src={`https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`}
                   alt="cover"
                 />
               </div>
-              <div className="book-item-info text-center">
-                <div className="book-item-info-item title fw-7 fs-18">
-                  <span>{book.title}</span>
+              <div className={style.bookiteminfo}>
+                <div className={style.bookiteminfoitem}>
+                  <h3>{book.title}</h3>
                 </div>
 
-                <div className="book-item-info-item author fs-15">
-                  <span className="text-capitalize fw-7">Author: </span>
-                  <span>{book.author.join(", ")}</span>
+                <div className={style.bookiteminfoitem}>
+                  <h5 className={style.text}>
+                    Author:{" "}
+                    <span className={style.textcapitalize}>
+                      {book.author.join(", ")}
+                    </span>
+                  </h5>
                 </div>
 
-                <div className="book-item-info-item edition-count fs-15">
-                  <span className="text-capitalize fw-7">Total Editions: </span>
+                <div className={style.bookiteminfoitem}>
+                  <span className={style.textcapitalize}>
+                    Total Editions:{" "}
+                  </span>
                   <span>{book.edition_count}</span>
                 </div>
 
-                <div className="book-item-info-item publish-year fs-15">
-                  <span className="text-capitalize fw-7">
+                <div className={style.bookiteminfoitem}>
+                  <span className={style.textcapitalize}>
                     First Publish Year:{" "}
                   </span>
                   <span>{book.first_publish_year}</span>
                 </div>
+
+                {isBookInCart ? (
+                  <button
+                    className={style.btn}
+                    onClick={() => removeFromCart(book)}
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button
+                    className={style.btn}
+                    onClick={() => addToCart(book)}
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             </div>
           );

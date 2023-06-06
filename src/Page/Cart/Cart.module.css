@@ -8,10 +8,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 6.2rem;
   }
   
   .bookitem {
-    width: calc(25% - 10rem); 
+    width: 20%; 
     margin-bottom: 20px; 
     margin: 2rem;
    

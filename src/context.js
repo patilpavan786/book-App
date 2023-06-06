@@ -6,7 +6,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("the lost world");
   const [books, setBooks] = useState([]);
-
+  const [cartItems, setCartItems] = useState([]);
   // console.log("i am from search ", searchTerm)
   console.log("i am from search ", books)
 
@@ -55,6 +55,7 @@ const AppProvider = ({ children }) => {
       value={{
         books,
         setSearchTerm,
+        cartItems, setCartItems
       }}
     >
       {children}
